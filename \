@@ -1,46 +1,45 @@
 import React from "react";
 import "./Navigation.css";
-import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <div className="navigation">
-      <Link to="/" className="navigation-item">
+      <a href="/" className="navigation-item">
         HOME
         <div className="underbar-home"></div>
-      </Link>
+      </a>
       <div className="navigation-item product-item">
         PRODUCTS
         <div className="underbar-products"></div>
         <div className="product-list">
-          <Link to="/mail">
+          <a href="/">
             <li>MAIL</li>
-          </Link>
-          <Link to="/give">
+          </a>
+          <a href="/">
             <li>GIVE</li>
-          </Link>
-          <Link to="/notes">
+          </a>
+          <a href="/">
             <li>NOTES</li>
-          </Link>
-          <Link to="/write">
+          </a>
+          <a href="/">
             <li>WRITE</li>
-          </Link>
-          <Link to="/read">
+          </a>
+          <a href="/">
             <li>READ</li>
-          </Link>
-          <Link to="/organize">
+          </a>
+          <a href="/">
             <li>ORGANIZE</li>
-          </Link>
+          </a>
         </div>
       </div>
-      <Link to="/collections" className="navigation-item">
+      <a href="/" className="navigation-item">
         COLLECTIONS
         <div className="underbar-collections"></div>
-      </Link>
-      <Link to="/about-us" className="navigation-item">
+      </a>
+      <a href="/" className="navigation-item">
         ABOUT US
         <div className="underbar-about"></div>
-      </Link>
+      </a>
     </div>
   );
 };

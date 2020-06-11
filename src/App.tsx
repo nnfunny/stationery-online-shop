@@ -1,12 +1,20 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header";
+import { HomePage, ProductsPage, AboutUsPage, CollectionsPage } from "./pages";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/:type" component={ProductsPage} />
+          <Route path="/collections" component={CollectionsPage} />
+          <Route exact path="/about-us" component={AboutUsPage} />
+        </Switch>
+      </div>
+    </Router>
   );
 };
 

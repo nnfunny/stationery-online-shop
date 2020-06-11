@@ -1,0 +1,46 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin: 10px 0 5px 0;
+  width: 100%;
+}
+
+.footer .contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.footer .contact .social .icon {
+  margin: 0 20px;
+  height: 28px;
+  width: 28px;
+  color: var(--gray);
+}
+
+.footer .contact .subscriber #email {
+  height: 46px;
+  width: 350px;
+  border: 1px solid var(--gray);
+  font-size: 12px;
+  padding: 20px;
+}
+
+.footer .contact .subscriber input[type="button"] {
+  border: none;
+  height: 46px;
+  width: 80px;
+  font-size: 12px;
+  background: var(--dark-gray);
+  color: var(--white);
+}
+
+.footer .love {
+  text-align: center;
+  color: var(--gray);
+}
+
+.footer .love span {
+  color: red;
+}
