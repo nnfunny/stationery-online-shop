@@ -1,6 +1,6 @@
 import React from "react";
+import Props from "./interface";
 
-interface Props {}
 const Give: React.FC<Props> = () => {
   return <div>Give</div>;
 };

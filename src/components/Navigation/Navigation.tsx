@@ -13,22 +13,22 @@ const Navigation = () => {
         PRODUCTS
         <div className="underbar-products"></div>
         <div className="product-list">
-          <Link to="/mail">
+          <Link to="/products/mail">
             <li>MAIL</li>
           </Link>
-          <Link to="/give">
+          <Link to="/products/give">
             <li>GIVE</li>
           </Link>
-          <Link to="/notes">
+          <Link to="/products/notes">
             <li>NOTES</li>
           </Link>
-          <Link to="/write">
+          <Link to="/products/write">
             <li>WRITE</li>
           </Link>
-          <Link to="/read">
+          <Link to="/products/read">
             <li>READ</li>
           </Link>
-          <Link to="/organize">
+          <Link to="/products/organize">
             <li>ORGANIZE</li>
           </Link>
         </div>

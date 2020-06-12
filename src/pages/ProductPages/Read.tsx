@@ -1,6 +1,6 @@
 import React from "react";
+import Props from "./interface";
 
-interface Props {}
 const Read: React.FC<Props> = () => {
   return <div>Read</div>;
 };
