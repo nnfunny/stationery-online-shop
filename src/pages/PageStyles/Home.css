@@ -14,11 +14,6 @@
 }
 
 .home .grid-container .image-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--light-gray);
   font-size: 3rem;
   box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
     rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
@@ -77,4 +72,53 @@
   .home .grid-container .image-card:nth-child(5) {
     grid-column: 3/4;
   }
+}
+
+/* Slide show  */
+.slideshow-container {
+  position: relative;
+}
+
+.slide-show {
+  display: none;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 10px;
+  color: var(--gray);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6 ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  border: none;
+  outline: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.prev:focus,
+.next:focus {
+  outline: none;
 }

@@ -34,13 +34,21 @@ const Subscriber = () => {
 const Social = () => {
   return (
     <div className="social">
-      <a href="https://www.facebook.com/" target="_blank">
+      <a
+        href="https://www.facebook.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FaFacebook className="icon"></FaFacebook>
       </a>
-      <a href="https://www.instagram.com/" target="_blank">
+      <a
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FaInstagram className="icon"></FaInstagram>
       </a>
-      <a href="https://twitter.com/" target="_blank">
+      <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
         <FaTwitter className="icon"></FaTwitter>
       </a>
     </div>
