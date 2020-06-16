@@ -100,17 +100,21 @@
   padding: 10px;
   color: var(--gray);
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   transition: 0.6 ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
   border: none;
   outline: none;
+  visibility: hidden;
+  transition: 0.3s ease;
+  transform: translateX(-100px);
 }
 
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
+  transform: translateX(100px);
 }
 
 .prev:hover,
@@ -121,4 +125,41 @@
 .prev:focus,
 .next:focus {
   outline: none;
+}
+
+.home .grid-container .image-card:nth-child(1):hover > .prev {
+  visibility: visible;
+  transform: translatex(0px);
+}
+
+.home .grid-container .image-card:nth-child(1):hover > .next {
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+.fade-effect {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }

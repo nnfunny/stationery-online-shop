@@ -25,21 +25,21 @@ const Home = () => {
       <div className="home-container grid-container">
         <div className="image-card slideshow-container">
           <div
-            className="slide-show"
+            className="slide-show fade-effect"
             style={{
               backgroundImage: `url(${Image2})`,
             }}
           ></div>
           <div
-            className="slide-show"
+            className="slide-show fade-effect"
             style={{
               backgroundImage: `url(${Image1})`,
             }}
           ></div>
           <div
-            className="slide-show"
+            className="slide-show fade-effect"
             style={{
-              backgroundImage: `url(${Image1})`,
+              backgroundImage: `url(${Image5})`,
             }}
           ></div>
           <button className="prev" id="prev">
