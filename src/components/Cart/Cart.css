@@ -27,3 +27,10 @@
 .cart .cost {
   color: var(--gray);
 }
+
+@media screen and (max-width: 600px) {
+  .cart {
+    transform: scale(0.7);
+    margin-right: -20px;
+  }
+}

@@ -1,7 +1,7 @@
-.header {
-  position: relative;
-  top: 0;
-}
+/* .header { */
+/* top: 0; */
+/* position: relative; */
+/* } */
 
 .header .shop-name {
   display: flex;
@@ -32,3 +32,9 @@
   font-size: 24px;
 }
 
+/* Phone Version  */
+@media screen and (max-width: 600px) {
+  .header {
+    height: 150px;
+  }
+}

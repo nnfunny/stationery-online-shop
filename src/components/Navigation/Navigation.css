@@ -97,3 +97,107 @@
 .navigation .product-list li:hover {
   color: var(--light-gray);
 }
+
+/* Phone Version  */
+.navigation-phone {
+  visibility: hidden;
+}
+@media screen and (max-width: 600px) {
+  .navigation {
+    visibility: hidden;
+  }
+  .navigation-phone {
+    visibility: visible;
+    position: fixed;
+    z-index: 10;
+    top: 55px;
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navigation-phone .nav-phone {
+    height: 40px;
+    width: 40px;
+    background: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .navigation-phone .nav-phone:hover {
+    filter: brightness(1.2);
+  }
+  .navigation-phone .nav-phone .icon {
+    color: var(--gray);
+  }
+
+  .dropdown-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    width: 100px;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    height: fit-content;
+    transition: all 500ms ease;
+  }
+
+  .dropdown-menu .menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .dropdown-menu .menu .menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    transition: background 500ms;
+  }
+
+  .dropdown-menu .menu .menu-item:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-primary-enter {
+    transform: translateX(-110%);
+  }
+  .menu-primary-enter-active {
+    transform: translateX(0%);
+    transition: all 500ms ease;
+  }
+  .menu-primary-exit {
+    position: absolute;
+  }
+  .menu-primary-exit-active {
+    transform: translateX(-110%);
+    transition: all 500ms ease;
+  }
+  .menu-product-enter {
+    transform: translateX(110%);
+  }
+  .menu-product-enter-active {
+    transform: translateX(0%);
+    transition: all 500ms ease;
+  }
+  .menu-product-exit {
+    position: absolute;
+  }
+  .menu-product-exit-active {
+    transform: translateX(110%);
+    transition: all 500ms ease;
+  }
+}

@@ -14,3 +14,10 @@
   outline: none;
   width: 100px;
 }
+
+@media screen and (max-width: 600px) {
+  .search {
+    transform: scale(0.75);
+    margin-left: -15px;
+  }
+}
