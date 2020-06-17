@@ -59,10 +59,14 @@
     height: 46px;
     width: 200px;
     border: 1px solid var(--gray);
-    font-size: 12px;
-    padding: 20px;
+    font-size: 8px;
+    padding: 10px;
   }
   .footer .contact .subscriber {
     margin: 10px;
+  }
+  .footer .contact .subscriber input[type="button"] {
+    font-size: 10px;
+    height: 46px;
   }
 }
