@@ -1,0 +1,27 @@
+.header-product-item {
+  width: 100%;
+  margin: 5px 0 50px 0px;
+}
+
+.header-product-item .col-sm {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.header-product-item .text-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eeeeee;
+}
+.header-product-item .text-product span {
+  font-family: "Amatic SC", cursive;
+  font-weight: bolder;
+  font-size: 96px;
+  padding: 100px;
+}
+
+.header-product-item .header-product-image img {
+  width: 100%;
+  height: auto;
+}

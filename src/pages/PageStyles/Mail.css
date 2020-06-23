@@ -1,0 +1,31 @@
+.mail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.mail-product-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 700px) {
+  .mail-product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mail-product-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .mail-product-list .card-container {
+    margin: 10px;
+  }
+}
