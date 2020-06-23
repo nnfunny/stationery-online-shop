@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { css } from "@emotion/core";
@@ -11,9 +11,64 @@ import {
   Image5,
   Image7,
   Image8,
-} from "./PageStyles/images/Images";
+} from "../images/Images";
 
 const Home = () => {
+  useEffect(() => {
+    let slideIndex = 0;
+    let timeOut: ReturnType<typeof setTimeout>;
+    autoMoveSlide();
+    moveSlide(slideIndex);
+    let prev = document.getElementById("prev")!;
+    let next = document.getElementById("next")!;
+
+    function forwardSlide() {
+      moveSlide(++slideIndex);
+    }
+    function backwardSlide() {
+      moveSlide(--slideIndex);
+    }
+
+    function moveSlide(n: number) {
+      let i;
+      let slides = document.getElementsByClassName(
+        "slide-show"
+      ) as HTMLCollectionOf<HTMLDivElement>;
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    function autoMoveSlide() {
+      let i;
+      let slides = document.getElementsByClassName(
+        "slide-show"
+      ) as HTMLCollectionOf<HTMLDivElement>;
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      timeOut = setTimeout(autoMoveSlide, 5000);
+    }
+    prev.addEventListener("click", backwardSlide);
+    next.addEventListener("click", forwardSlide);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, []);
+
   return (
     <div
       className="home"

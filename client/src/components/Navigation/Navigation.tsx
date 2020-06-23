@@ -12,42 +12,42 @@ const Navigation = () => {
   return (
     <>
       <div className="navigation">
-        <a href="/" className="navigation-item">
+        <Link to="/" className="navigation-item">
           HOME
           <div className="underbar-home"></div>
-        </a>
+        </Link>
         <div className="navigation-item product-item">
           PRODUCTS
           <div className="underbar-products"></div>
           <div className="product-list">
-            <a href="/products/mail">
+            <Link to="/products/mail">
               <li>MAIL</li>
-            </a>
-            <a href="/products/give">
+            </Link>
+            <Link to="/products/give">
               <li>GIVE</li>
-            </a>
-            <a href="/products/notes">
+            </Link>
+            <Link to="/products/notes">
               <li>NOTES</li>
-            </a>
-            <a href="/products/write">
+            </Link>
+            <Link to="/products/write">
               <li>WRITE</li>
-            </a>
-            <a href="/products/read">
+            </Link>
+            <Link to="/products/read">
               <li>READ</li>
-            </a>
-            <a href="/products/organize">
+            </Link>
+            <Link to="/products/organize">
               <li>ORGANIZE</li>
-            </a>
+            </Link>
           </div>
         </div>
-        <a href="/collections" className="navigation-item">
+        <Link to="/collections" className="navigation-item">
           COLLECTIONS
           <div className="underbar-collections"></div>
-        </a>
-        <a href="/about-us" className="navigation-item">
+        </Link>
+        <Link to="/about-us" className="navigation-item">
           ABOUT US
           <div className="underbar-about"></div>
-        </a>
+        </Link>
       </div>
 
       <div className="navigation-phone">
@@ -83,9 +83,9 @@ const DropDownMenu = () => {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <a href="/" className="menu-item">
+          <Link to="/" className="menu-item">
             HOME
-          </a>
+          </Link>
           <div
             className="menu-item"
             style={{ cursor: "pointer" }}
@@ -93,12 +93,12 @@ const DropDownMenu = () => {
           >
             PRODUCTS
           </div>
-          <a href="/collections" className="menu-item">
+          <Link to="/collections" className="menu-item">
             COLLECTIONS
-          </a>
-          <a href="/about-us" className="menu-item">
+          </Link>
+          <Link to="/about-us" className="menu-item">
             ABOUT US
-          </a>
+          </Link>
         </div>
       </ReactCSS.CSSTransition>
       <ReactCSS.CSSTransition
@@ -116,24 +116,24 @@ const DropDownMenu = () => {
           >
             <IoMdArrowRoundBack />
           </div>
-          <a href="/products/mail" className="menu-item">
+          <Link to="/products/mail" className="menu-item">
             <li>MAIL</li>
-          </a>
-          <a href="/products/give" className="menu-item">
+          </Link>
+          <Link to="/products/give" className="menu-item">
             <li>GIVE</li>
-          </a>
-          <a href="/products/notes" className="menu-item">
+          </Link>
+          <Link to="/products/notes" className="menu-item">
             <li>NOTES</li>
-          </a>
-          <a href="/products/write" className="menu-item">
+          </Link>
+          <Link to="/products/write" className="menu-item">
             <li>WRITE</li>
-          </a>
-          <a href="/products/read" className="menu-item">
+          </Link>
+          <Link to="/products/read" className="menu-item">
             <li>READ</li>
-          </a>
-          <a href="/products/organize" className="menu-item">
+          </Link>
+          <Link to="/products/organize" className="menu-item">
             <li>ORGANIZE</li>
-          </a>
+          </Link>
         </div>
       </ReactCSS.CSSTransition>
     </div>

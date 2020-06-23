@@ -2,28 +2,29 @@ import React from "react";
 import Props from "./interface";
 import Card from "../../components/Card";
 import HeaderProduct from "../../components/HeaderProduct";
+import Filter from "../../components/Filter";
 import "../PageStyles/Mail.css";
 
 // Temporary
-import Image3 from "../../components/Card/images/3.png";
-import Image9 from "../../components/HeaderProduct/images/9.png";
+import { Number3, Number9 } from "../../images/Images";
 
 const Mail: React.FC<Props> = () => {
   return (
     <div className="mail-container">
-      <HeaderProduct name={"Mail"} link={Image9} />
+      <HeaderProduct name={"Mail"} link={Number9} />
+      <Filter />
       <div className="mail-product-list">
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
-        <Card link={Image3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
+        <Card link={Number3} name={"12 Letterpress Postcards"} price={12.5} />
       </div>
     </div>
   );
