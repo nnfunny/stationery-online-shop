@@ -96,3 +96,18 @@
   font-size: 14px;
 }
 
+@media screen and (max-width: 600px) {
+  .cart-summary .cart-summary-container .cart-table .cart-item-desc img {
+    width: 75px;
+    height: 50px;
+  }
+  .cart-summary
+    .cart-summary-container
+    .cart-table
+    .cart-item-desc
+    .cart-item-name {
+    padding-left: 8px;
+    font-size: 10px;
+    width: 75px;
+  }
+}

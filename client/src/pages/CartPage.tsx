@@ -5,6 +5,25 @@ import { Number3 } from "../images/Images";
 import "./PageStyles/CartPage.css";
 import { MdDeleteForever } from "react-icons/md";
 
+const CartPage = () => {
+  return (
+    <div className="cart-summary">
+      <Header />
+      <div className="cart-summary-container">
+        <div className="cart-title">Shopping Cart Summary</div>
+        <CartTable />
+        <div className="total-container">
+          <input className="update-button" type="button" value="UPDATE" />
+          <div className="subtotal-text">Subtotal before delivery</div>
+          <div className="subtotal-number">$12.50</div>
+          <input className="checkout-button" type="button" value="CHECKOUT" />
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
 const CartTable = () => {
   return (
     <>
@@ -33,25 +52,6 @@ const CartTable = () => {
         </tbody>
       </table>
     </>
-  );
-};
-
-const CartPage = () => {
-  return (
-    <div className="cart-summary">
-      <Header />
-      <div className="cart-summary-container">
-        <div className="cart-title">Shopping Cart Summary</div>
-        <CartTable />
-        <div className="total-container">
-          <input className="update-button" type="button" value="UPDATE" />
-          <div className="subtotal-text">Subtotal before delivery</div>
-          <div className="subtotal-number">$12.50</div>
-          <input className="checkout-button" type="button" value="CHECKOUT" />
-        </div>
-      </div>
-      <Footer />
-    </div>
   );
 };
 
