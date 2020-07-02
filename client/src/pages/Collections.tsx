@@ -1,8 +1,11 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { SpringImage, SummerImage, AutumnImage } from "../images/Images";
 import "./PageStyles/Collections.css";
+
+const SpringImage = "/images/Collections/image1.png";
+const SummerImage = "/images/Collections/image2.png";
+const AutumnImage = "/images/Collections/image3.png";
 
 const Collections = () => {
   return (

@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { UsImage } from "../images/Images";
 import "./PageStyles/AboutUs.css";
+
+const UsImage = "/images/AboutUs/us.png";
 
 const AboutUs = () => {
   return (

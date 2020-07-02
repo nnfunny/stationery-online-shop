@@ -6,7 +6,8 @@ import Filter from "../../components/Filter";
 import "../PageStyles/Mail.css";
 
 // Temporary
-import { Number3, Number9 } from "../../images/Images";
+const Number3 = "/images/Mails/3.png";
+const Number9 = "/images/Mails/9.png";
 
 const Mail: React.FC<Props> = () => {
   return (

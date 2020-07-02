@@ -4,16 +4,15 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import "./PageStyles/ProductDescription.css";
 import { FaArrowLeft } from "react-icons/fa";
-import {
-  Desc1,
-  Desc2,
-  Desc3,
-  Desc4,
-  Desc5,
-  Desc6,
-  Desc7,
-  Desc8,
-} from "../images/Images";
+
+const Desc1 = "/images/ProductDescription/image1.png";
+const Desc2 = "/images/ProductDescription/image2.png";
+const Desc3 = "/images/ProductDescription/image3.png";
+const Desc4 = "/images/ProductDescription/image4.png";
+const Desc5 = "/images/ProductDescription/image5.png";
+const Desc6 = "/images/ProductDescription/image6.png";
+const Desc7 = "/images/ProductDescription/image7.png";
+const Desc8 = "/images/ProductDescription/image8.png";
 
 const ProductDescription = () => {
   return (

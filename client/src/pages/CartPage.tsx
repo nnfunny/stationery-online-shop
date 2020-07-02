@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Number3 } from "../images/Images";
 import "./PageStyles/CartPage.css";
 import { MdDeleteForever } from "react-icons/md";
 
+const Number3 = "/images/Mails/3.png";
 const CartPage = () => {
   return (
     <div className="cart-summary">

@@ -3,15 +3,15 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { css } from "@emotion/core";
 import "./PageStyles/Home.css";
-import {
-  Image1,
-  Image2,
-  Image3,
-  Image4,
-  Image5,
-  Image7,
-  Image8,
-} from "../images/Images";
+
+const Image1 = "/images/Home/image1.png";
+const Image2 = "/images/Home/image2.png";
+const Image3 = "/images/Home/image3.png";
+const Image4 = "/images/Home/image4.png";
+const Image5 = "/images/Home/image5.png";
+const Image6 = "/images/Home/image6.png";
+const Image7 = "/images/Home/image7.png";
+const Image8 = "/images/Home/image8.png";
 
 const Home = () => {
   useEffect(() => {
