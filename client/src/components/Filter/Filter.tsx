@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import "./Filter.css";
 import { FiFilter } from "react-icons/fi";
 
-const FilterItem = () => {
+interface Props {
+  count: number;
+}
+const FilterItem: React.FC<Props> = ({ count }) => {
   const [optionValue, setOption] = useState("created-descending");
   return (
     <div className="filter-container">
-      <div className="filtering-results">10 Results</div>
+      <div className="filtering-results">{count} Results</div>
       <div className="filter-icon">
         <FiFilter className="the-filter-icon"></FiFilter>
       </div>

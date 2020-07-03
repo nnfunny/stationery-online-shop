@@ -61,7 +61,7 @@
   color: var(--black);
   border-bottom: 1px solid var(--gray);
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 18px;
 }
 .product-desc .text-description .quantity {
   padding: 15px 0;

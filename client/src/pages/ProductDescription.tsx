@@ -1,77 +1,133 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, RouteComponentProps, useHistory } from "react-router-dom";
 import "./PageStyles/ProductDescription.css";
 import { FaArrowLeft } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../store";
+import { describeProduct } from "../actions/productActions";
 
-const Desc1 = "/images/ProductDescription/image1.png";
-const Desc2 = "/images/ProductDescription/image2.png";
-const Desc3 = "/images/ProductDescription/image3.png";
-const Desc4 = "/images/ProductDescription/image4.png";
-const Desc5 = "/images/ProductDescription/image5.png";
-const Desc6 = "/images/ProductDescription/image6.png";
-const Desc7 = "/images/ProductDescription/image7.png";
-const Desc8 = "/images/ProductDescription/image8.png";
+interface MathcParams {
+  type: string;
+  id: string;
+}
+interface Props extends RouteComponentProps<MathcParams> {}
 
-const ProductDescription = () => {
+const ProductDescription: React.FC<Props> = ({ match }) => {
+  const productDescription = useSelector(
+    (state: RootState) => state.productDescription
+  );
+  const { product, loading, error } = productDescription;
+  const dispatch = useDispatch();
+
+  useLayoutEffect(() => {
+    dispatch(describeProduct(match.params.id));
+    return () => {};
+  }, []);
+
   return (
-    <div className="product-desc">
-      <Header />
-      <div className="product-desc-container">
-        <BackButton />
-        <div className="product-description-part">
-          <ImageDescription />
-          <TextDescription />
+    <>
+      {product === undefined && loading ? (
+        <div>Loading...</div>
+      ) : error === "yes" ? (
+        <div>Oops... Error</div>
+      ) : (
+        <div className="product-desc">
+          <Header />
+          <div className="product-desc-container">
+            <BackButton category={match.params.type} />
+            <div className="product-description-part">
+              <ImageDescription
+                bigImage={product!.imagePath}
+                relatedImages={product!.relatedImage}
+              />
+              <TextDescription
+                name={product!.productName}
+                description={product!.description}
+                price={product!.price}
+              />
+            </div>
+            <Recommendation />
+          </div>
+          <Footer />
         </div>
-        <Recommendation />
-      </div>
-      <Footer />
-    </div>
+      )}
+    </>
   );
 };
 
-const BackButton = () => {
+interface BackProps {
+  category: string;
+}
+const BackButton: React.FC<BackProps> = ({ category }) => {
+  const history = useHistory();
+
+  function handleClick() {
+    // history.push(`/products/${category}`);
+    history.goBack();
+  }
   return (
     <div className="back-button">
-      <Link to="/products/mail">
+      <button
+        style={{
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+        }}
+        type="button"
+        onClick={handleClick}
+      >
         <FaArrowLeft className="back-icon"></FaArrowLeft>
         <span className="back-text">Back</span>
-      </Link>
+      </button>
     </div>
   );
 };
 
-const ImageDescription = () => {
+interface ImageDescriptionProps {
+  bigImage: string;
+  relatedImages: string[];
+}
+const ImageDescription: React.FC<ImageDescriptionProps> = ({
+  bigImage,
+  relatedImages,
+}) => {
   return (
     <div className="image-desc col-md-7">
       <div className="big-image">
-        <img src={Desc1} alt="Error" />
+        <img src={bigImage} alt="Error" />
       </div>
       <div className="next-images">
-        <img src={Desc2} alt="Error" />
-        <img src={Desc3} alt="Error" />
-        <img src={Desc4} alt="Error" />
+        {relatedImages.map((image, id) => {
+          return <img key={id} src={image} alt="Error" />;
+        })}
       </div>
     </div>
   );
 };
 
-const TextDescription = () => {
+interface TextProps {
+  name: string;
+  description: string;
+  price: number;
+}
+const TextDescription: React.FC<TextProps> = ({ name, description, price }) => {
   return (
     <div className="text-description col-md-5">
-      <h4>12 Letterpress PostCards</h4>
-      <div className="cost">$12.50</div>
+      <h4>{name}</h4>
+      <div className="cost">${price}</div>
       <div className="quantity">
         <div>Quantity</div>
-        <input id="quantity-product" type="number" name="cost" />
+        <input
+          id="quantity-product"
+          type="number"
+          name="cost"
+          defaultValue="1"
+        />
       </div>
       <input type="button" value="ADD TO CART" />
-      <p>
-        A handsome pack of 12 letterpress postcards from Portugal, all featuring
-        an eclectic mix of symbols, illustration & type. Great colours too. Nice
-        for your wall & lovely to share.
-      </p>
+      <p>{description}</p>
       <div className="share">
         Share:
         <a
@@ -105,10 +161,7 @@ const Recommendation = () => {
     <div className="recommendation">
       <div className="text">Recommendation</div>
       <div className="recommended-products">
-        <img src={Desc5} alt="Error" />
-        <img src={Desc6} alt="Error" />
-        <img src={Desc7} alt="Error" />
-        <img src={Desc7} alt="Error" />
+        <img src="" alt="Error" />
       </div>
     </div>
   );

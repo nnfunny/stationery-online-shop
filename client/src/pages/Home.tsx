@@ -9,9 +9,12 @@ const Image2 = "/images/Home/image2.png";
 const Image3 = "/images/Home/image3.png";
 const Image4 = "/images/Home/image4.png";
 const Image5 = "/images/Home/image5.png";
-const Image6 = "/images/Home/image6.png";
 const Image7 = "/images/Home/image7.png";
 const Image8 = "/images/Home/image8.png";
+
+const SlideImages: string[] = [Image1, Image2, Image5];
+const HomeImagesOne: string[] = [Image5, Image7];
+const HomeImagesTwo: string[] = [Image3, Image4, Image8];
 
 const Home = () => {
   useEffect(() => {
@@ -79,24 +82,17 @@ const Home = () => {
       <Header />
       <div className="home-container grid-container">
         <div className="image-card slideshow-container">
-          <div
-            className="slide-show fade-effect"
-            style={{
-              backgroundImage: `url(${Image2})`,
-            }}
-          ></div>
-          <div
-            className="slide-show fade-effect"
-            style={{
-              backgroundImage: `url(${Image1})`,
-            }}
-          ></div>
-          <div
-            className="slide-show fade-effect"
-            style={{
-              backgroundImage: `url(${Image5})`,
-            }}
-          ></div>
+          {SlideImages.map((image, i) => {
+            return (
+              <div
+                key={i}
+                className="slide-show fade-effect"
+                style={{
+                  backgroundImage: `url(${image})`,
+                }}
+              ></div>
+            );
+          })}
           <button className="prev" id="prev">
             &#10094;
           </button>
@@ -105,37 +101,29 @@ const Home = () => {
           </button>
         </div>
         <div className="image-subcontainer">
-          <div
-            className="image-card"
-            style={{
-              backgroundImage: `url(${Image5})`,
-            }}
-          ></div>
-          <div
-            className="image-card"
-            style={{
-              backgroundImage: `url(${Image7})`,
-            }}
-          ></div>
+          {HomeImagesOne.map((image, i) => {
+            return (
+              <div
+                key={i}
+                className="image-card"
+                style={{
+                  backgroundImage: `url(${image})`,
+                }}
+              ></div>
+            );
+          })}
         </div>
-        <div
-          className="image-card"
-          style={{
-            backgroundImage: `url(${Image3})`,
-          }}
-        ></div>
-        <div
-          className="image-card"
-          style={{
-            backgroundImage: `url(${Image4})`,
-          }}
-        ></div>
-        <div
-          className="image-card"
-          style={{
-            backgroundImage: `url(${Image8})`,
-          }}
-        ></div>
+        {HomeImagesTwo.map((image, i) => {
+          return (
+            <div
+              key={i}
+              className="image-card"
+              style={{
+                backgroundImage: `url(${image})`,
+              }}
+            ></div>
+          );
+        })}
       </div>
       <Footer />
     </div>
