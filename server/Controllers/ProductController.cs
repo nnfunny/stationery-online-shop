@@ -15,7 +15,7 @@ namespace server.Controllers
     public class ProductController : ControllerBase
     {
         private readonly MySqlDatabase MySqlDatabase;
-        
+
         public ProductController(MySqlDatabase mySqlDatabase)
         {
             MySqlDatabase = mySqlDatabase;
@@ -25,9 +25,9 @@ namespace server.Controllers
         private async Task<ActionResult<IEnumerable<Product>>> GetProductByCommand(MySqlCommand cmd)
         {
             List<Product> list = new List<Product>();
-            using(var reader = await cmd.ExecuteReaderAsync())
+            using (var reader = await cmd.ExecuteReaderAsync())
             {
-                while(await reader.ReadAsync())
+                while (await reader.ReadAsync())
                 {
                     list.Add(new Product()
                     {
@@ -52,16 +52,16 @@ namespace server.Controllers
         {
             MySqlCommand cmd = MySqlDatabase.Connection.CreateCommand();
             cmd.CommandText = "SELECT"
-                + " product.product_id," 
+                + " product.product_id,"
                 + "product.name,"
                 + "category.category_name,"
-                + "image.path," 
+                + "image.path,"
                 + "description.price,"
                 + "description.description_text,"
                 + "product.group_id,"
-                + "product.options" 
-            + " FROM product" 
-                + " INNER JOIN image ON product.img_id = image.img_id" 
+                + "product.options"
+            + " FROM product"
+                + " INNER JOIN image ON product.img_id = image.img_id"
                 + " INNER JOIN description ON product.description_id = description.description_id"
                 + " INNER JOIN category ON product.category_id = category.category_id;";
             return await GetProductByCommand(cmd);
@@ -76,7 +76,7 @@ namespace server.Controllers
             MySqlCommand cmd = MySqlDatabase.Connection.CreateCommand();
             cmd.CommandText = @"SELECT product.product_id, product.name, category.category_name, image.path, description.price, description.description_text, product.group_id, product.options FROM product INNER JOIN image ON product.img_id = image.img_id INNER JOIN description ON product.description_id = description.description_id INNER JOIN category ON product.category_id = category.category_id WHERE category.category_name = @Category";
             cmd.Parameters.AddWithValue("@Category", category);
-            
+
             return await GetProductByCommand(cmd);
         }
 
@@ -99,11 +99,22 @@ namespace server.Controllers
             MySqlCommand cmd = MySqlDatabase.Connection.CreateCommand();
             cmd.CommandText = @"SELECT product.product_id, group_product.img_path FROM product INNER JOIN group_product ON group_product.group_id = product.product_id where product.product_id = @Id";
             cmd.Parameters.AddWithValue("@Id", id);
-            using(var reader = await cmd.ExecuteReaderAsync())
-                while(await reader.ReadAsync())
+            using (var reader = await cmd.ExecuteReaderAsync())
+                while (await reader.ReadAsync())
                     path.Add(reader["img_path"].ToString());
-                    
+
             return path;
+        }
+
+        // GET: api/product/search?keyword=<keyword>
+        [HttpGet("search")]
+        public async Task<ActionResult<IEnumerable<Product>>> SearchProduct(string keyword)
+        {
+            string DecodedKeyword = "%" + keyword + "%";
+            MySqlCommand cmd = MySqlDatabase.Connection.CreateCommand();
+            cmd.CommandText = @"SELECT product.product_id, product.name, category.category_name, image.path, description.price, description.description_text, product.group_id, product.options FROM product INNER JOIN image ON product.img_id = image.img_id INNER JOIN description ON product.description_id = description.description_id INNER JOIN category ON product.category_id = category.category_id WHERE product.name LIKE @Keyword OR description.description_text LIKE @Keyword OR description.price LIKE @Keyword OR category.category_name LIKE @Keyword;";
+            cmd.Parameters.AddWithValue("@Keyword", DecodedKeyword);
+            return await GetProductByCommand(cmd);
         }
     }
 }

@@ -38,7 +38,7 @@ const describeProduct = (productId: string) => async (
     dispatch({ type: PRODUCT_DESCRIPTION_REQUEST });
     const requestOne = Axios.get(`/api/product/find?Id=${productId}`);
     const requestTwo = Axios.get(`/api/product/group/${productId}`);
-    const response = await Axios.all([requestOne, requestTwo]).then(
+    await Axios.all([requestOne, requestTwo]).then(
       Axios.spread((...responses) => {
         const data: ProductDescription = {
           ...responses[0].data[0],

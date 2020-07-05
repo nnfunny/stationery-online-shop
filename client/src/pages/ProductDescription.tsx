@@ -1,7 +1,7 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link, RouteComponentProps, useHistory } from "react-router-dom";
+import { RouteComponentProps, useHistory } from "react-router-dom";
 import "./PageStyles/ProductDescription.css";
 import { FaArrowLeft } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
@@ -21,10 +21,10 @@ const ProductDescription: React.FC<Props> = ({ match }) => {
   const { product, loading, error } = productDescription;
   const dispatch = useDispatch();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     dispatch(describeProduct(match.params.id));
     return () => {};
-  }, []);
+  }, [dispatch, match.params.id]);
 
   return (
     <>

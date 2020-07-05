@@ -29,7 +29,7 @@ const Products: React.FC<Props> = ({ match }) => {
   useEffect(() => {
     dispatch(listProducts(category));
     return () => {};
-  }, [category]);
+  }, [dispatch, category]);
 
   return (
     <React.Fragment>
