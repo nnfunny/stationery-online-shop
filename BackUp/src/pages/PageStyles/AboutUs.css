@@ -1,0 +1,22 @@
+.about-us .about-us-container {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-us .about-us-container .us-image img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .about-us .about-us-container {
+    min-height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}

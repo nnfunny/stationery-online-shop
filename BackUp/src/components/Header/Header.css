@@ -1,0 +1,40 @@
+/* .header { */
+/* top: 0; */
+/* position: relative; */
+/* } */
+
+.header .shop-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  border-bottom: 2.5px solid var(--gray);
+}
+
+.header .shop-name a {
+  color: var(--gray);
+  font-size: 28px;
+}
+
+.subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray);
+  padding: 10px 0;
+}
+
+.subheader .welcome {
+  color: var(--gray);
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Phone Version  */
+@media screen and (max-width: 600px) {
+  .header {
+    height: 150px;
+  }
+}

@@ -1,0 +1,36 @@
+.cart .cart-icon {
+  color: var(--gray);
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+  padding-top: 5px;
+}
+
+.cart .quantity {
+  position: absolute;
+  text-align: center;
+  height: 18px;
+  width: 18px;
+  padding-top: 1px;
+  border-radius: 50%;
+  background: var(--gray);
+  transform: translate(-15px, -5px);
+  color: var(--white);
+  font-weight: bold;
+}
+
+.cart .cart-name {
+  color: var(--gray);
+  margin-right: 10px;
+}
+
+.cart .cost {
+  color: var(--gray);
+}
+
+@media screen and (max-width: 600px) {
+  .cart {
+    transform: scale(0.7);
+    margin-right: -20px;
+  }
+}
