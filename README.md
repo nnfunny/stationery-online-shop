@@ -5,6 +5,6 @@ __Project Description__: A website represents an online stationery shop to satis
 __Technologies/Tools__
  - Programming Language: Typescript (client) and C# (server)
  - Mockups/Prototype: Figma
- - Front-end: React.js
+ - Front-end: React.js, Redux
  - Back-end: ASP.NET Core
  - Database Management System: MySQL
