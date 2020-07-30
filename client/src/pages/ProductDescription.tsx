@@ -132,7 +132,7 @@ const TextDescription: React.FC<TextProps> = ({
     let input = document.getElementById("quantity-product") as HTMLInputElement;
 
     if (qua < 1) {
-      input.value = "1";
+      input.value = "";
     }
     setQuantity(qua);
   }
