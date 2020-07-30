@@ -7,7 +7,6 @@ interface Props extends RouteComponentProps<any> {
 
 const ScrollTopTop: React.SFC<Props> = ({ history, children }) => {
   useEffect(() => {
-    console.log(history);
     const unlisten = history.listen(() => {
       window.scrollTo(0, 0);
     });

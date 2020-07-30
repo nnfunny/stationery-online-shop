@@ -125,11 +125,16 @@ const TextDescription: React.FC<TextProps> = ({
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   function handleClick() {
-    dispatch(addToCart(product, quantity));
-    console.log(product, quantity);
+    if (quantity >= 1) dispatch(addToCart(product, quantity));
   }
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setQuantity(Number(e.target.value));
+    let qua = Number(e.target.value);
+    let input = document.getElementById("quantity-product") as HTMLInputElement;
+
+    if (qua < 1) {
+      input.value = "1";
+    }
+    setQuantity(qua);
   }
 
   return (
@@ -142,6 +147,7 @@ const TextDescription: React.FC<TextProps> = ({
           id="quantity-product"
           type="number"
           name="cost"
+          min="0"
           defaultValue={quantity}
           onChange={handleChange}
         />

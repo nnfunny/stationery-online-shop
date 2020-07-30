@@ -57,7 +57,7 @@ const CartTable: React.FC<Props> = ({ cart }) => {
         <tbody>
           {cart.map((item) => {
             return (
-              <tr>
+              <tr key={item.id}>
                 <td className="cart-item-desc">
                   <img src={item.imagePath} alt="Error" />
                   <div className="cart-item-name">
