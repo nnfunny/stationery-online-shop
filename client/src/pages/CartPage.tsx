@@ -65,7 +65,7 @@ const CartTable: React.FC<Props> = ({ cart }) => {
                     <MdDeleteForever
                       className="delete-icon"
                       onClick={() => dispatch(removeCart(item))}
-                      style={{ cursor: "pointer" }}
+                      style={{ cursor: "pointer", color: "#e98074" }}
                     ></MdDeleteForever>
                   </div>
                 </td>
